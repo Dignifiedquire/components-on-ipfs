@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>{%= o.htmlWebpackPlugin.options.title %}</title>
+  </head>
+  <body>
+    <h1>IPFS Rocks?</h1>
+    <div id="answer">
+      No
+    </div>
+    {% for (var chunk in o.htmlWebpackPlugin.files.chunks) { %}
+    <script src="{%=o.htmlWebpackPlugin.files.chunks[chunk].entry %}"></script>
+    {% } %}
+  </body>
+</html>
